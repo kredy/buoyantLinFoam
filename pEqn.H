@@ -1,7 +1,6 @@
 // Solve for pressure and correct the velocity terms
 
 
-// OpenFoam's version of Rhie-Chow interpolation
 volScalarField rAU("rAU", 1.0/UEqn.A());
 surfaceScalarField rAUf("rAUf", fvc::interpolate(rAU));
 volVectorField HbyA("HbyA", constrainHbyA(rAU*UEqn.H(), U, p));
